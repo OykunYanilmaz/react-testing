@@ -1,9 +1,3 @@
-# Testing React Apps
-
-This is the starter project for my Reacting testing course where you'll learn everything you need to know to effectively test React apps. You can find the full course at: 
-
-https://codewithmosh.com 
-
 ## About this Project 
 
 This is a React app built with the following technologies and libraries: 
@@ -14,8 +8,6 @@ This is a React app built with the following technologies and libraries:
 - React Router 
 - React Query  
 - Redux Toolkit 
-
-Please follow these instructions carefully to setup this project on your machine. 
 
 ## Setting up Auth0 for Authentication
 
