@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import ProductDetail from '../../src/components/ProductDetail'
-import { products } from '../mocks/data';
+// import { products } from '../mocks/data';
 import { server } from '../mocks/server';
 import { http, HttpResponse } from 'msw';
 import { db } from '../mocks/db';
@@ -41,4 +41,12 @@ describe('ProductDetail', () => {
         const message = await screen.findByText(/invalid/i);
         expect(message).toBeInTheDocument();
     });
+
+    it('should render and error if data fetching fails', async () => {
+        server.use(http.get('/products/1', () => HttpResponse.error()));
+        
+        render(<ProductDetail productId={1} />);
+
+        expect(await screen.findByText(/error/i)).toBeInTheDocument()
+    })
 })
